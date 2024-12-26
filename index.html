@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApp Auction</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <h1>Auction App</h1>
+    <div>
+        <button onclick="showBlock('main')">Main Page</button>
+        <button onclick="showBlock('lot')">Lot</button>
+        <button onclick="showBlock('myAuctions')">My Auctions</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="main" class="block active">
+        <h2>Welcome!</h2>
+        <div class="card">
+            <h3>Current Auctions</h3>
+            <p>Discover one-of-a-kind treasures waiting for you. Start bidding and claim your prize today!</p>
+        </div>
+        <div class="card">
+            <h3>How to Participate</h3>
+            <p>Join the excitement! Be sure you have money in your wallet, explore exclusive lots, and make your first
+                bid in seconds.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Transactions</h3>
+            <p>Bid with confidence! Every transaction is encrypted and your security is guaranteed.</p>
+        </div>
+    </div>
+
+    <div id="lot" class="block">
+        <h2>Lot Information</h2>
+        <div class="lot-details">
+            <img src="https://via.placeholder.com/400" alt="Lot Image">
+            <h3>Lot Title</h3>
+            <div class="info-panel">
+                <strong>Current Bid:</strong> <span>$100</span>
+            </div>
+            <div class="info-panel">
+                <strong>Time Remaining:</strong> <span>2h 45m</span>
+            </div>
+            <div class="bid-section">
+                <button onclick="decreaseBid()">-</button>
+                <div class="bid-value" id="bidValue">$100</div>
+                <button onclick="increaseBid()">+</button>
+
+                <button class="place-bid-button" onclick="placeBid()">Place Bid</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myAuctions" class="block">
+        <h2>My Auctions</h2>
+        <div class="auction-grid">
+            <div class="auction-item">
+                <img src="https://via.placeholder.com/400" alt="Lot 1">
+                <h3>Lot 1: Rare Painting</h3>
+                <p><strong>Status:</strong> Leading</p>
+                <p><strong>Current Bid:</strong> $500</p>
+                <p><strong>Time Remaining:</strong> 1h 30m</p>
+            </div>
+            <div class="auction-item">
+                <img src="https://via.placeholder.com/400" alt="Lot 2">
+                <h3>Lot 2: Vintage Car</h3>
+                <p><strong>Status:</strong> Outbid</p>
+                <p><strong>Current Bid:</strong> $15,000</p>
+                <p><strong>Time Remaining:</strong> 3h 20m</p>
+            </div>
+            <div class="auction-item">
+                <img src="https://via.placeholder.com/400" alt="Lot 3">
+                <h3>Lot 3: Jewelry Set</h3>
+                <p><strong>Status:</strong> Won</p>
+                <p><strong>Winning Bid:</strong> $2,000</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <!--    <p>&copy; 2024 Auction. All rights reserved.</p>-->
+</footer>
+
+<div class="bottom-panel">
+    <div class="wallet-info">
+        <p class="wallet-address"><strong>Wallet:</strong> My Wallet</p>
+        <p class="wallet-balance"><strong>Balance:</strong> $1,000</p>
+    </div>
+    <button class="recharge-button">Recharge</button>
+</div>
+
+<button id="scrollToTop" class="scroll-to-top">↑</button>
+
+<div id="popup-module" class="popup">
+    <div class="popup-content">
+        <span class="popup-close" id="popup-close">&times;</span>
+        <p>Вызываем этот попап в любое время.</p>
+        <button id="popup-refresh" class="popup-refresh">Refresh Page</button>
+    </div>
+</div>
+
+<script src="JS/navigation.js"></script>
+<script src="JS/bid_logic.js"></script>
+</body>
+</html>
